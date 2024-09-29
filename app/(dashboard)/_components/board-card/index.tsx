@@ -49,12 +49,12 @@ export const BoardCard=({
       pending:pendingUnFavorite
     }=useApiMutation(api.board.unfavorite)
 
-    const toggleFavorite=async()=>{
+    const toggleFavorite=()=>{
       if(isFavorite){
-        await onUnFavorite({id})
+         onUnFavorite({id})
         .catch(()=>toast.error("failed to unfavorite"))
       }else{
-        await onFavorite({id,orgId})
+         onFavorite({id,orgId})
         .catch(()=>toast.error("failed to favorite"))
       }
 
