@@ -33,6 +33,11 @@ export const BoardList = ({ orgId, query }: BoardListProps) => {
             <BoardCard.Skeleton/>
             <BoardCard.Skeleton/>
             <BoardCard.Skeleton/>
+            <BoardCard.Skeleton/>
+            <BoardCard.Skeleton/>
+            <BoardCard.Skeleton/>
+            <BoardCard.Skeleton/>
+            <BoardCard.Skeleton/>
             </div>
         </div>
       )
@@ -75,7 +80,7 @@ export const BoardList = ({ orgId, query }: BoardListProps) => {
                 authorName={board.authorName}
                 createdAt={board._creationTime}
                 orgId={board.orgId}
-                isFavorite={false}
+                isFavorite={board.isFavorite}
                 />
               ))}                
           </div>
