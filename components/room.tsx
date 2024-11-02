@@ -12,8 +12,9 @@ interface roomProps{
 const authorizationEndPoint="/api/liveblocks-auth"
 export const Room=({children,roomId,fallback}:roomProps)=>{
     return(
-        <LiveblocksProvider authEndpoint={authorizationEndPoint}>
-            <RoomProvider id={roomId} initialPresence={{}}>
+        // throttle =16 -->60 fps
+        <LiveblocksProvider authEndpoint={authorizationEndPoint} throttle={16}>
+            <RoomProvider id={roomId} initialPresence={{cursor:null,}}>
                 <ClientSideSuspense fallback={fallback}>
                     {()=>children}
                 </ClientSideSuspense>
